@@ -18,7 +18,6 @@ import { placeAtom } from "./atom";
 import { useAtom } from "jotai";
 import { useEffect } from "react";
 
-//https://api.openweathermap.org/data/2.5/forecast?q=jambi&appid=1b295de4f9eef4ef96fcdf9b5a32619f&cnt=56
 
 interface WeatherDetail {
   dt: number;
@@ -81,7 +80,6 @@ export default function Home() {
     "repoData",
     async () => {
       const { data } = await axios.get(
-        //`https://api.openweathermap.org/data/2.5/forecast?q=jambi&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}&cnt=56`
         `https://api.openweathermap.org/data/2.5/forecast?q=${place}&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}&cnt=56`
       );
 
