@@ -8,6 +8,7 @@ import { useAtom } from "jotai";
 import { loadingCityAtom, placeAtom } from "@/app/atom";
 import { Switch } from "@/components/ui/switch"
 import { ThemeSwitch } from "@/components/themeSwitch"
+import { ModeToggle } from "@/components/themeToggle"
 
 type Props = { location?: string };
 const API_KEY = process.env.NEXT_PUBLIC_WEATHER_KEY;
@@ -119,6 +120,7 @@ export default function Navbar({ location }: Props) {
                 }}
               />
             </div>
+            <ModeToggle/>
           </section>
         </div>
       </nav>

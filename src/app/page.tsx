@@ -133,7 +133,6 @@ export default function Home() {
           <LoadingSkeleton />
         ) : (
           <>
-          <ModeToggle/>
             <section className="space-y-4">
               <div>
                 <h2 className="flex gap-1 text-2xl items-ends">
