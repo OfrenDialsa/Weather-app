@@ -21,7 +21,7 @@ import { useEffect } from "react";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Switch } from "@/components/ui/switch"
 import { ThemeSwitch } from "@/components/themeSwitch"
-import { ModeToggle } from "@/components/themeToggle"
+
 
 interface WeatherDetail {
   dt: number;

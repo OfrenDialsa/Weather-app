@@ -9,6 +9,7 @@ import { loadingCityAtom, placeAtom } from "@/app/atom";
 import { Switch } from "@/components/ui/switch"
 import { ThemeSwitch } from "@/components/themeSwitch"
 import { ModeToggle } from "@/components/themeToggle"
+import { TiWeatherCloudy } from "react-icons/ti";
 
 type Props = { location?: string };
 const API_KEY = process.env.NEXT_PUBLIC_WEATHER_KEY;
