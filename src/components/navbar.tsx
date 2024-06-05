@@ -6,6 +6,8 @@ import SearchBox from "./searchBox";
 import axios from "axios";
 import { useAtom } from "jotai";
 import { loadingCityAtom, placeAtom } from "@/app/atom";
+import { Switch } from "@/components/ui/switch"
+import { ThemeSwitch } from "@/components/themeSwitch"
 
 type Props = { location?: string };
 const API_KEY = process.env.NEXT_PUBLIC_WEATHER_KEY;
@@ -82,24 +84,24 @@ export default function Navbar({ location }: Props) {
   }
   return (
     <>
-      <nav className="shadow-sm sticky top-0 left-0 z-50 bg-white">
+      <nav className="shadow-sm sticky top-0 left-0 z-50 bg-white dark:bg-slate-800">
         <div className="h-[80px] w-full flex justify-between items-center max-w-7xl px-3 mx-auto">
           <div className=" flex-col items-center justify-center gap-2 -space-y-6">
             <div className="flex">
-              <h2 className="text-gray-500 text-3xl">Weather app</h2>
+              <h2 className="text-gray-500 dark:text-gray-200 text-3xl">Weather app</h2>
               <MdWbSunny className="text-4xl text-yellow-300 mt-1" />
             </div>
             <br />
-            <p className="text-gray-500 text-sm ml-24">By Ofren Dialsa</p>
+            <p className="text-gray-500 dark:text-gray-200 text-sm ml-24">By Ofren Dialsa</p>
           </div>
-          <section className="flex items-center gap-2">
+          <section className="flex items-center gap-3">
             <MdMyLocation
               title="Your Current Location"
               onClick={handleCurrentLocation}
               className="text-3xl text-gray-500 cursor-pointer"
             />
             <MdLocationOn className="text-3xl cursor-pointer" />
-            <p className="text-slate-900/80 text-sm mr-2">{location}</p>
+            <p className="text-slate-900/80 dark:text-slate-200/80 text-sm mr-2">{location}</p>
             <div className="relative hidden md:flex">
               {/* SearchBox */}
 
@@ -139,6 +141,7 @@ export default function Navbar({ location }: Props) {
           />
         </div>
       </section>
+      
     </>
   );
 }

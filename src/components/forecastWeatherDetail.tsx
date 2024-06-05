@@ -41,7 +41,7 @@ export default function ForecastWeatherDetail(props: ForecastWeatherDetailProps)
             {/* */}
             <div className='flex flex-col px-4'>
                 <span className='text-5xl'>{converKtoC(temp ?? 0)}°</span>
-                <p className='text-xs space-x-1 whitespace-nowrap'>
+                <p className=' text-xs space-x-1 whitespace-nowrap'>
                     <span> Feels like</span>
                     <span>{converKtoC(feels_like ?? 0)}°</span>
                 </p>

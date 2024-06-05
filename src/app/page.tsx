@@ -2,6 +2,7 @@
 "use client";
 
 import Image from "next/image";
+import "./globals.css";
 import Navbar from "@/components/navbar";
 import { useQuery } from "react-query";
 import axios from "axios";
@@ -17,6 +18,10 @@ import ForecastWeatherDetail from "@/components/forecastWeatherDetail";
 import { loadingCityAtom, placeAtom } from "./atom";
 import { useAtom } from "jotai";
 import { useEffect } from "react";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Switch } from "@/components/ui/switch"
+import { ThemeSwitch } from "@/components/themeSwitch"
+import { ModeToggle } from "@/components/themeToggle"
 
 interface WeatherDetail {
   dt: number;
@@ -120,7 +125,7 @@ export default function Home() {
     );
 
   return (
-    <div className="flex flex-col gap-4 bg-gray-100 min-h-screen">
+    <div className="flex flex-col gap-4 bg-gray-100 dark:bg-gray-900 min-h-screen">
       <Navbar location={data?.city.name} />
       <main className="px-3 max-w-7xl mx-auto flex flex-col gap-9 w-full pb-10 pt-4">
         {/* Today Data */}
@@ -128,6 +133,7 @@ export default function Home() {
           <LoadingSkeleton />
         ) : (
           <>
+          <ModeToggle/>
             <section className="space-y-4">
               <div>
                 <h2 className="flex gap-1 text-2xl items-ends">
@@ -195,7 +201,7 @@ export default function Home() {
                   />
                 </Container>
                 {/*kanan */}
-                <Container className="bg-yellow-400/80 px-6 gap-4 justify-between overflow-x-auto">
+                <Container className="bg-yellow-400/80 dark:bg-yellow-600/80 px-6 gap-4 justify-between overflow-x-auto">
                   <WeatherDetail
                     visability={MtoK(firstData?.visibility ?? 10000)}
                     humidity={`${firstData?.main.humidity}%`}

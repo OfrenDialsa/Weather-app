@@ -3,6 +3,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,8 +21,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <QueryClientProvider client={queryClient}>
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+          </body>
       </QueryClientProvider>
     </html>
   );
 }
+
