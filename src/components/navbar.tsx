@@ -89,11 +89,11 @@ export default function Navbar({ location }: Props) {
         <div className="h-[80px] w-full flex justify-between items-center max-w-7xl px-3 mx-auto">
           <div className=" flex-col items-center justify-center gap-2 -space-y-6">
             <div className="flex">
-              <h2 className="text-gray-500 dark:text-gray-200 text-3xl">Weather app</h2>
+              <h2 className="text-gray-700 dark:text-gray-200 text-3xl">Weather app</h2>
               <MdWbSunny className="text-4xl text-yellow-300 mt-1" />
             </div>
             <br />
-            <p className="text-gray-500 dark:text-gray-200 text-sm ml-24">By Ofren Dialsa</p>
+            <p className="text-gray-500 dark:text-gray-500 text-sm ml-24">By Ofren Dialsa</p>
           </div>
           <section className="flex items-center gap-3">
             <MdMyLocation
@@ -162,7 +162,7 @@ function SuggestionBox({
   return (
     <>
       {((showSuggestions && suggestions.length > 1) || error) && (
-        <ul className="mb-4 bg-white absolute border top-[44px] left-0 border-gray-300 rounded-md min-w-[200px] flex flex-col gap-1 py-2 px-2">
+        <ul className="mb-4 bg-white dark:bg-black absolute border top-[44px] left-0 border-gray-300 rounded-md min-w-[200px] flex flex-col gap-1 py-2 px-2">
           {error && suggestions.length < 1 && (
             <li className="text-red-500 p-1">{error}</li>
           )}
